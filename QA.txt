@@ -1,1 +1,4 @@
 what is your name?;Ro
+what is your number?;1
+name?;Ro
+what is your age?;23
