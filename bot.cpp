@@ -1,4 +1,4 @@
-
+#pragma once
 #include "bot.h"
 
 bot::bot()
@@ -7,19 +7,17 @@ bot::bot()
 	inputFile.open("QA.txt");
 	std::string tmpQ; // used for temporarily storing questions from text file
 	std::string tmpA; // used for temporarily storing answer from text file
-
-	while (inputFile.is_open())
+	system("pause");
+	while (!inputFile.eof())
 	{
-		std::getline(std::cin, tmpQ, ';');
-		std::getline(std::cin, tmpA);
-		question questionObj(tmpA, tmpA);
+		getline(inputFile, tmpQ, ';');
+		getline(inputFile, tmpA);
+		question questionObj(tmpQ, tmpA);
 		questionList.push_back(questionObj);
 		std::cout << questionList.front().m_getQuery() << std::endl;
 		std::cout << questionList.front().m_getAnswer() << std::endl;
 	}
 
-	
-	
 	system("pause");
 }
 
