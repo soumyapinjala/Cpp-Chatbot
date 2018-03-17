@@ -1,13 +1,18 @@
-#pragma once
+
 #include <list>
+#include <fstream>
+#include <iostream>
+
 #include "question.h"
+
 class bot
 {
 public:
 	bot();
-	bool checkQuestion();
+	bool isQuestion(std::string question);
+	bool checkAndReply(std::string question);
 	~bot();
 
 private:
-	std::list<question> list;
+	std::list<question> questionList;
 };
