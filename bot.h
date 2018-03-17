@@ -1,4 +1,4 @@
-
+#pragma once
 #include <list>
 #include <fstream>
 #include <iostream>
@@ -9,8 +9,10 @@ class bot
 {
 public:
 	bot();
-	bool isQuestion(std::string question);
-	bool checkAndReply(std::string question);
+	bool isQuestion(std::string input);
+	bool check(std::string input);
+	void reply(std::string input);
+	void storeNewQuestion(std::string input);
 	~bot();
 
 private:
